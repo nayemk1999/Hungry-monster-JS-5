@@ -1,7 +1,8 @@
- const displayFood = document.getElementById('displayFood');
+const displayFood = document.getElementById('displayFood');
 const inputFoodName = document.getElementById('inputFoodName');
 const searchBtn = document.getElementById('searchBtn');
 const errorArea = document.getElementById('errorArea');
+const detailsDiv = document.getElementById('foodDetails');
 
 //search Button 
 searchBtn.addEventListener('click', function (e) {
@@ -22,20 +23,20 @@ const getFoodContain = getFoodContain => {
                 previwesHTML += htmlTemplate;
 
             })
-           
+
             displayFood.innerHTML = previwesHTML;
             document.getElementById('inputFoodName').value = '';
         })
         .catch(error => {
             displayFood.style.display = "none";
             errorArea.style.display = "block";
+            detailsDiv.style.display = "none";
             inputFoodName.value = '';
         });
 };
 
 // single Food Details
 const getFoodDetail = singleFood => {
-    const detailsDiv = document.getElementById('foodDetails');
     detailsDiv.innerHTML = `<div class="singleFoodArea">
      <img src="${singleFood.strMealThumb}" alt="">
      <h1>Category : ${singleFood.strCategory}</h1>
@@ -46,7 +47,7 @@ const getFoodDetail = singleFood => {
      <h5>Ingredient5 : ${singleFood.strIngredient5}</h5>
      <h5>Ingredient6 : ${singleFood.strIngredient6}</h5> 
      </div>
-     ` 
+     `
 }
 
 
