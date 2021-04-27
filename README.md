@@ -1,2 +1,2 @@
-# hungry-master by Javascript 
-# assignment-05
+# Hungry-master by Javascript 
+# Assignment-05
